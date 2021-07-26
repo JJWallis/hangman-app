@@ -55,3 +55,20 @@ input::placeholder {
   color: black;
   font-weight: bold;
 }
+
+button {
+  border: 1px solid;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  border: 2px solid;
+  font-weight: bold;
+}
+
+#word-to-guess {
+  font-size: 2rem;
+  letter-spacing: 0.7ch;
+}
