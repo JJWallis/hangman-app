@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="/normalise.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+    <script defer src="/script.js"></script>
+    <title>Hangman</title>
+</head>
+<body>
+    <h1 class="title">Welcome to Hangman!</h1>
+    <div class="wrapper">
+        <div class="hangman-container wrapper-child">
+            <pre id="hangman-img" class="hangman">
+                  +—+
+                  | |
+              
+                    |
+              
+                    |
+              
+                    |
+              
+                    |
+              
+              =========
+            </pre>
+        </div>
+        <div class="words-container wrapper-child">
+            <h2 class="guide">Guess the 4 letter random word below - one letter at a time:</h2>
+            <h3 id="tries-remaining-txt">Number of tries remaining:</h3>
+            <div><p id="tries-remaining">7</p></div>
+            <input id="usrs-input" type="text" placeholder="Enter guess here...">
+            <button type="button" id="button-check">Check</button>
+            <p id="word-to-guess">_____</p>
+        </div>
+    </div>
+</body>
+</html>
