@@ -9,21 +9,25 @@ const btnCheck = document.querySelector('#button-check')
 let wordToGuess = document.querySelector('#word-to-guess')
 let counter = 0
 let guessesLeft = 6
-let isPlaying = false
-
+let isPlaying = true 
 
 const functions = {
     element: (el, prop, val) => el[prop] = val
 }
 
+// ======================= PLAY GAME ========================
+
 if (isPlaying) {
 
-} else {
-    endGame()
-}
+
+    if (guessesLeft === 0) {
+        isPlaying = false
+        endGame()
+    }
+} 
 
 
-// ======================= END GAME ========================
+// ======================= END GAME ==========================
 
 function btnReset () {
     const btn = document.createElement('button')
