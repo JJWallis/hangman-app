@@ -20,8 +20,11 @@ body {
 
 .wrapper {
   display: flex;
+  position: relative;
+  align-items: center;
   width: 90%;
   max-width: 900px;
+  min-height: 500px;
   padding: 1rem;
   border: 1px solid black;
   border-radius: 15px;
@@ -34,9 +37,16 @@ body {
 
 .words-container {
   text-align: center;
+  border-left: 1px solid;
+  padding-left: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 h3 {
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -48,14 +58,14 @@ h3 {
 }
 
 input {
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 10px;
   padding: 0.5rem;
   outline: none;
+  font-size: 1.5rem;
 }
 
 input:hover {
-  border: 2px solid;
   outline: none;
 }
 
@@ -66,14 +76,13 @@ input::placeholder {
 }
 
 button {
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 10px;
   padding: 0.5rem 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 button:hover {
-  border: 2px solid;
   font-weight: bold;
 }
 
@@ -85,4 +94,16 @@ input:focus {
 #word-to-guess {
   font-size: 2rem;
   letter-spacing: 0.7ch;
+}
+
+/* =================
+      JS CLASSES 
+================== */
+
+.reset {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  font-size: 4rem;
+  text-transform: uppercase;
 }
