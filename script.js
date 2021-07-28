@@ -7,8 +7,9 @@ const txtContainer = document.querySelector('#txt-container')
 let triesRemaining = document.querySelector('#tries-remaining')
 const guess = document.querySelector('#usrs-input')
 const btnCheck = document.querySelector('#button-check')
-let wordToGuess = document.querySelector('#word-to-guess')
-let counter = 0
+let correctGuess = document.querySelector('#word-to-guess')
+let correctGuesses = []
+let hangmanCounter = 0 
 let guessesLeft = 6
 let isPlaying = true
 
@@ -16,24 +17,38 @@ const functions = {
     element: (el, prop, val) => el[prop] = val
 }
 
+function chooseWord () {
+    const random = () => Math.floor(Math.random() * 9) + 1
+    const num = random()
+    const word = words[num]
+    return [...word]
+}
+
+const word = chooseWord()
+
 // ======================= PLAY GAME ========================
 
 txtContainer.addEventListener('click', e => {
     if (e.target.matches('#button-check')) {
         const input = guess.value
         const valid = validate(value)
-        if (valid) playGame()
+        if (valid) playGame(input)
+        input = ''
     }
 })
 
 function validate (val) {
+    // removes any current error mssgs/styling present
     // regular expression - no numbers/special chars + only letters 
     // returns true if pass
     // or prints error mssg + resets input to empty string + return blank value (undefined) 
 }
 
-function playGame () {
+function playGame (guess) {
     if (isPlaying) {
+
+
+
         if (guessesLeft === 0) {
             isPlaying = false
             endGame()
@@ -60,4 +75,5 @@ function endGame () {
     counter = 0
     guessesLeft = 6
     functions.element(triesRemaining, 'innerText', guessesLeft)
+    chooseWord()
 }
