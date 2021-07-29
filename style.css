@@ -60,9 +60,12 @@ h3 {
 .input {
   border: 2px solid;
   border-radius: 10px;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   outline: none;
   font-size: 1.5rem;
+  background: white url("/images/angle-right-solid.svg") no-repeat 90% center /
+    6%;
 }
 
 .input:hover {
@@ -96,9 +99,17 @@ button:hover {
   letter-spacing: 0.7ch;
 }
 
+.error-icon {
+  background: url("/images/exclamation-solid.svg") no-repeat 90% center / 4%;
+}
+
 /* =================
       JS CLASSES 
 ================== */
+
+.hidden {
+  display: none;
+}
 
 .reset {
   position: absolute;
@@ -109,14 +120,19 @@ button:hover {
 }
 
 .error {
-  position: absolute;
-  top: 69%;
-  left: 57%;
   color: lightcoral;
+}
+
+.error-msg {
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 0.5rem 0 0 0;
 }
 
 .error-border {
   border: 3px solid lightcoral;
+}
+
+.error-border::placeholder {
+  color: lightcoral;
 }

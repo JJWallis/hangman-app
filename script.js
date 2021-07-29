@@ -1,5 +1,3 @@
-// REFACTOR
-
 import hangmanImages from './data.js'
 const words = ['able','acid','aged','also','area','army','away','baby','band','bank']
 const wrapper = document.querySelector('#container')
@@ -49,16 +47,19 @@ function validate (val) {
     if (regex.test(val) && val.length === 1) {
         if (error.length > 0) {
             error.forEach(el => el.remove()) 
-            guess.classList.remove('error-border')
+            guess.classList.remove('error-border', 'error-icon')
+            guess.placeholder = 'Enter guess here...'
         }
         return true
     } 
 
     const errorMsg = document.createElement('p')
     functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case')
-    functions.element(errorMsg, 'className', 'error')
+    errorMsg.classList.add('error', 'error-msg')
     parent.append(errorMsg)
-    guess.classList.add('error-border')
+    guess.classList.add('error-border', 'error-icon')
+    guess.placeholder = 'Try again...'
+
 }
 
 function playGame (guess) {
@@ -125,4 +126,5 @@ function reset () {
     letters.forEach( el => functions.element(el, 'innerText', '_') )
     functions.element(title, 'innerText', 'Welcome to Hangman!')
     chooseWord()
+    console.log(word)
 }
