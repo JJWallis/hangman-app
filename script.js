@@ -51,17 +51,20 @@ function playGame (guess) {
                 correctlyGuessed = true 
                 correctGuesses.push(guess)
                 printSuccessMsg(guess, i) 
+                if (correctGuesses.length === 4) {
+                    isPlaying = false
+                    endGame(correctlyGuessed) // TEST 
+                    break
+                }
+            } else {
+
+
+                if (guessesLeft === 0) {
+                    isPlaying = false
+                    endGame()
+                    break
+                }
             }
-        }
-
-
-
-
-
-
-        if (guessesLeft === 0) {
-            isPlaying = false
-            endGame()
         }
     } 
 }
@@ -71,37 +74,34 @@ function printSuccessMsg (guess, index) {
     correctLetter.innerText = guess
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 // ======================= END GAME ==========================
 
-function btnReset () {
-    const btn = document.createElement('button')
-    functions.element(btn, 'type', 'button')
-    functions.element(btn, 'textContent', 'Reset')
-    functions.element(btn, 'className', 'reset')
-    return btn
+txtContainer.addEventListener('click', e => {
+    if (e.target.matches('.reset')) {
+        reset()
+    }
+})
+
+function endGame (win) {
+    const btn = btnReset()
+    function btnReset () {
+        const btn = document.createElement('button')
+        functions.element(btn, 'type', 'button')
+        functions.element(btn, 'textContent', 'Reset')
+        functions.element(btn, 'className', 'reset')
+        return btn
+    }
+    wrapper.append(btn)
+    functions.element(title, 'innerText', win ? 'Congratulations, you won the game!' : 'Looser! Click reset to play again!')
 }
 
-function endGame () {
+function reset () {
     const letters = document.querySelectorAll('span')
-    const btn = btnReset()
-    wrapper.append(btn)
-    functions.element(title, 'innerText', 'Click the reset button bellow to play again!')
-    wordToGuess = '____'
+    letters.forEach( el => functions.element(el, 'innerText', '_') )
+    functions.element(triesRemaining, 'innerText', guessesLeft)
     counter = 0
     guessesLeft = 6
-    functions.element(triesRemaining, 'innerText', guessesLeft)
-    letters.forEach( el => functions.element(el, 'innerText', '_') )
+    correctGuesses = []
+    isPlaying = true
     chooseWord()
 }
