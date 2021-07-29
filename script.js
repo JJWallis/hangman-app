@@ -5,7 +5,7 @@ const title = document.querySelector('#main-title')
 const hangman = document.querySelector('#hangman-img')
 const txtContainer = document.querySelector('#txt-container')
 let triesRemaining = document.querySelector('#tries-remaining')
-const guess = document.querySelector('#usrs-input')
+let guess = document.querySelector('#usrs-input')
 const btnCheck = document.querySelector('#button-check')
 let correctGuess = document.querySelector('#word-to-guess')
 let correctGuesses = []
@@ -19,8 +19,7 @@ const functions = {
 
 function chooseWord () {
     const random = () => Math.floor(Math.random() * 9) + 1
-    const num = random()
-    const word = words[num]
+    const word = words[random()]
     return [...word]
 }
 
@@ -31,18 +30,18 @@ const word = chooseWord()
 txtContainer.addEventListener('click', e => {
     if (e.target.matches('#button-check')) {
         const input = guess.value
-        const valid = validate(value)
-        if (valid) playGame(input)
-        input = ''
+        // const valid = validate(input) if (valid)
+        playGame(input) 
+        guess.value = ''
     }
 })
 
-function validate (val) {
-    // removes any current error mssgs/styling present
-    // regular expression - no numbers/special chars + only letters 
-    // returns true if pass
-    // or prints error mssg + resets input to empty string + return blank value (undefined) 
-}
+// function validate (val) {
+//     // removes any current error mssgs/styling present
+//     // regular expression - no numbers/special chars + only letters 
+//     // returns true if pass
+//     // or prints error mssg + resets input to empty string + return blank value (undefined) 
+// }
 
 function playGame (guess) {
     if (isPlaying) {
