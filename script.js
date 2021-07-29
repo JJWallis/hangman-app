@@ -1,3 +1,5 @@
+// REFACTOR
+
 import hangmanImages from './data.js'
 const words = ['able','acid','aged','also','area','army','away','baby','band','bank']
 const wrapper = document.querySelector('#container')
@@ -47,7 +49,7 @@ function validate (val) {
     if (regex.test(val) && val.length === 1) {
         if (error.length > 0) {
             error.forEach(el => el.remove()) 
-            guess.style.border = '2px solid black'
+            guess.classList.remove('error-border')
         }
         return true
     } 
@@ -56,7 +58,7 @@ function validate (val) {
     functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case')
     functions.element(errorMsg, 'className', 'error')
     parent.append(errorMsg)
-    guess.style.border = '3px solid lightcoral'
+    guess.classList.add('error-border')
 }
 
 function playGame (guess) {
