@@ -107,3 +107,12 @@ input:focus {
   font-size: 4rem;
   text-transform: uppercase;
 }
+
+.error {
+  position: absolute;
+  top: 69%;
+  left: 57%;
+  color: lightcoral;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

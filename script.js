@@ -29,8 +29,8 @@ wrapper.addEventListener('click', e => {
     const target = e.target
     if (target.matches('#button-check')) {
         const input = guess.value
-        // const valid = validate(input) if (valid)
-        playGame(input) 
+        const valid = validate(input) 
+        if (valid) playGame(input) 
         guess.value = ''
     } 
     
@@ -39,12 +39,25 @@ wrapper.addEventListener('click', e => {
     }
 })
 
-// function validate (val) {
-//     // removes any current error mssgs/styling present
-//     // regular expression - no numbers/special chars + only letters 
-//     // returns true if pass
-//     // or prints error mssg + resets input to empty string + return blank value (undefined) 
-// }
+function validate (val) {
+    const error = document.querySelectorAll('.error')
+    const parent = document.querySelector('.interaction-container')
+    const regex = /[a-z]/g
+
+    if (regex.test(val) && val.length === 1) {
+        if (error.length > 0) {
+            error.forEach(el => el.remove()) 
+            guess.style.border = '2px solid black'
+        }
+        return true
+    } 
+
+    const errorMsg = document.createElement('p')
+    functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case')
+    functions.element(errorMsg, 'className', 'error')
+    parent.append(errorMsg)
+    guess.style.border = '3px solid lightcoral'
+}
 
 function playGame (guess) {
     if (isPlaying) {
@@ -54,6 +67,7 @@ function playGame (guess) {
                 correctlyGuessed = true 
                 correctGuesses.push(guess)
                 fillWord(guess, i) 
+                functions.element(title, 'innerText', 'Correct! Keep going!')
                 if (correctGuesses.length === 4) {
                     isPlaying = false
                     endGame(correctlyGuessed) 
