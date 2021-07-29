@@ -11,25 +11,26 @@ let guessesLeft = 6
 let isPlaying = true
 
 const functions = {
-    element: (el, prop, val) => el[prop] = val
+    element: (el, prop, val) => el[prop] = val,
+    classList: (el, prop, val) => el.classList[prop](val)
 }
 
 function chooseWord () {
     const random = () => Math.floor(Math.random() * 9) + 1
     const word = words[random()]
-    return [...word]
+    return [...word] // split() instead 
 }
 
 const word = chooseWord()
 console.log(word)
 
-// ======================= PLAY GAME ========================
+// ======================= VALIDATE ========================
 
 wrapper.addEventListener('click', e => {
     const target = e.target
     if (target.matches('#button-check')) {
         const input = guess.value
-        const valid = validate(input) 
+        const valid = isValid(input) 
         if (valid) playGame(input) 
         guess.value = ''
     } 
@@ -39,7 +40,7 @@ wrapper.addEventListener('click', e => {
     }
 })
 
-function validate (val) {
+function isValid (val) {
     const error = document.querySelectorAll('.error')
     const parent = document.querySelector('.interaction-container')
     const regex = /[a-z]/g
@@ -56,11 +57,13 @@ function validate (val) {
     const errorMsg = document.createElement('p')
     functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case')
     errorMsg.classList.add('error', 'error-msg')
-    parent.append(errorMsg)
+    if (parent.children.length === 2) parent.append(errorMsg)
     guess.classList.add('error-border', 'error-icon')
     guess.placeholder = 'Try again...'
 
 }
+
+// ======================= PLAY GAME ========================
 
 function playGame (guess) {
     if (isPlaying) {
