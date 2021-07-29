@@ -3,10 +3,8 @@ const words = ['able','acid','aged','also','area','army','away','baby','band','b
 const wrapper = document.querySelector('#container')
 const title = document.querySelector('#main-title')
 const hangman = document.querySelector('#hangman-img')
-const txtContainer = document.querySelector('#txt-container')
 let triesRemaining = document.querySelector('#tries-remaining')
 let guess = document.querySelector('#usrs-input')
-const btnCheck = document.querySelector('#button-check')
 let correctGuesses = []
 let hangmanCounter = 0 
 let guessesLeft = 6
@@ -27,12 +25,17 @@ console.log(word)
 
 // ======================= PLAY GAME ========================
 
-txtContainer.addEventListener('click', e => {
-    if (e.target.matches('#button-check')) {
+wrapper.addEventListener('click', e => {
+    const target = e.target
+    if (target.matches('#button-check')) {
         const input = guess.value
         // const valid = validate(input) if (valid)
         playGame(input) 
         guess.value = ''
+    } 
+    
+    if (target.matches('#reset-button')) {
+        reset()
     }
 })
 
@@ -50,10 +53,10 @@ function playGame (guess) {
             if (guess === word[i]) {
                 correctlyGuessed = true 
                 correctGuesses.push(guess)
-                printSuccessMsg(guess, i) 
+                fillWord(guess, i) 
                 if (correctGuesses.length === 4) {
                     isPlaying = false
-                    endGame(correctlyGuessed) // TEST 
+                    endGame(correctlyGuessed) 
                     break
                 }
             } else {
@@ -69,18 +72,12 @@ function playGame (guess) {
     } 
 }
 
-function printSuccessMsg (guess, index) {
+function fillWord (guess, index) {
     const correctLetter = document.querySelector(`#letter${index}`)
     correctLetter.innerText = guess
 }
 
 // ======================= END GAME ==========================
-
-txtContainer.addEventListener('click', e => {
-    if (e.target.matches('.reset')) {
-        reset()
-    }
-})
 
 function endGame (win) {
     const btn = btnReset()
@@ -89,6 +86,7 @@ function endGame (win) {
         functions.element(btn, 'type', 'button')
         functions.element(btn, 'textContent', 'Reset')
         functions.element(btn, 'className', 'reset')
+        functions.element(btn, 'id', 'reset-button')
         return btn
     }
     wrapper.append(btn)
@@ -97,11 +95,13 @@ function endGame (win) {
 
 function reset () {
     const letters = document.querySelectorAll('span')
-    letters.forEach( el => functions.element(el, 'innerText', '_') )
-    functions.element(triesRemaining, 'innerText', guessesLeft)
-    counter = 0
+    document.querySelector('#reset-button').remove()
+    hangmanCounter = 0
     guessesLeft = 6
     correctGuesses = []
     isPlaying = true
+    functions.element(triesRemaining, 'innerText', guessesLeft)
+    letters.forEach( el => functions.element(el, 'innerText', '_') )
+    functions.element(title, 'innerText', 'Welcome to Hangman!')
     chooseWord()
 }
