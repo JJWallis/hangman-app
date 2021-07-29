@@ -59,14 +59,18 @@ function playGame (guess) {
                     endGame(correctlyGuessed) 
                     break
                 }
-            } else {
-
-
-                if (guessesLeft === 0) {
-                    isPlaying = false
-                    endGame()
-                    break
-                }
+            } 
+        } 
+        
+        if (!correctlyGuessed) {
+            guessesLeft --
+            functions.element(triesRemaining, 'innerText', guessesLeft)
+            hangmanCounter ++
+            hangman.innerText = hangmanImages[`num${hangmanCounter}`]
+            functions.element(title, 'innerText', 'Wrong! Try again!')
+            if (guessesLeft === 0) {
+                isPlaying = false
+                endGame()
             }
         }
     } 
@@ -100,6 +104,7 @@ function reset () {
     guessesLeft = 6
     correctGuesses = []
     isPlaying = true
+    hangman.innerText = hangmanImages[`num0`]
     functions.element(triesRemaining, 'innerText', guessesLeft)
     letters.forEach( el => functions.element(el, 'innerText', '_') )
     functions.element(title, 'innerText', 'Welcome to Hangman!')
