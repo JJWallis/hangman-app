@@ -7,7 +7,6 @@ const txtContainer = document.querySelector('#txt-container')
 let triesRemaining = document.querySelector('#tries-remaining')
 let guess = document.querySelector('#usrs-input')
 const btnCheck = document.querySelector('#button-check')
-let correctGuess = document.querySelector('#word-to-guess')
 let correctGuesses = []
 let hangmanCounter = 0 
 let guessesLeft = 6
@@ -24,6 +23,7 @@ function chooseWord () {
 }
 
 const word = chooseWord()
+console.log(word)
 
 // ======================= PLAY GAME ========================
 
@@ -45,6 +45,17 @@ txtContainer.addEventListener('click', e => {
 
 function playGame (guess) {
     if (isPlaying) {
+        let correctlyGuessed = false
+        for (let i = 0; i < word.length; i++) {
+            if (guess === word[i]) {
+                correctlyGuessed = true 
+                correctGuesses.push(guess)
+                printSuccessMsg(guess, i) 
+            }
+        }
+
+
+
 
 
 
@@ -54,6 +65,22 @@ function playGame (guess) {
         }
     } 
 }
+
+function printSuccessMsg (guess, index) {
+    const correctLetter = document.querySelector(`#letter${index}`)
+    correctLetter.innerText = guess
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ======================= END GAME ==========================
@@ -67,6 +94,7 @@ function btnReset () {
 }
 
 function endGame () {
+    const letters = document.querySelectorAll('span')
     const btn = btnReset()
     wrapper.append(btn)
     functions.element(title, 'innerText', 'Click the reset button bellow to play again!')
@@ -74,5 +102,6 @@ function endGame () {
     counter = 0
     guessesLeft = 6
     functions.element(triesRemaining, 'innerText', guessesLeft)
+    letters.forEach( el => functions.element(el, 'innerText', '_') )
     chooseWord()
 }
