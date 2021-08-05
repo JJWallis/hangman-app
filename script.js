@@ -15,7 +15,7 @@ const functions = {
     classList: (el, prop, val, val1) => el.classList[prop](val, val1)
 }
 
-function chooseWord () {
+function chooseWord() {
     const random = () => Math.floor(Math.random() * 9) + 1
     const word = words[random()]
     return word.split('')
@@ -38,7 +38,7 @@ wrapper.addEventListener('click', e => {
     if (target.matches('#reset-button')) reset()
 })
 
-function isValid (val) {
+function isValid(val) {
     const error = document.querySelectorAll('.error')
     const parent = document.querySelector('.interaction-container')
     const regex = /[a-z]/g
@@ -68,7 +68,7 @@ const falsy = parent => {
 
 // ======================= PLAY GAME ========================
 
-function playGame (guess) {
+function playGame(guess) {
     if (isPlaying) {
         let correctlyGuessed = false
         for (let i = 0; i < word.length; i++) {
@@ -99,28 +99,28 @@ function playGame (guess) {
     } 
 }
 
-function fillWord (guess, index) {
+function fillWord(guess, index) {
     const correctLetter = document.querySelector(`#letter${index}`)
     correctLetter.innerText = guess
 }
 
 // ======================= END GAME ==========================
 
-function endGame (win) {
-    const btn = btnReset()
-    function btnReset () {
-        const btn = document.createElement('button')
-        functions.element(btn, 'type', 'button')
-        functions.element(btn, 'textContent', 'Reset')
-        functions.element(btn, 'className', 'reset')
-        functions.element(btn, 'id', 'reset-button')
-        return btn
-    }
-    wrapper.append(btn)
+function endGame(win) {
+    const btn = document.createElement('button')
+    wrapper.append(btnReset(btn))
     functions.element(title, 'innerText', win ? 'Congratulations, you won the game!' : 'Looser! Click reset to play again!')
 }
 
-function reset () {
+const btnReset = btn => {
+    functions.element(btn, 'type', 'button')
+    functions.element(btn, 'textContent', 'Reset')
+    functions.element(btn, 'className', 'reset')
+    functions.element(btn, 'id', 'reset-button')
+    return btn
+}
+
+function reset() {
     const letters = document.querySelectorAll('span')
     document.querySelector('#reset-button').remove()
     hangmanCounter = 0
