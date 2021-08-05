@@ -42,7 +42,7 @@ function isValid(val) {
     const error = document.querySelectorAll('.error')
     const parent = document.querySelector('.interaction-container')
     const regex = /[a-z]/g
-    if (regex.test(val) && val.length === 1) {
+    if (regex.test(val) && val.length === 1 && !correctGuesses.includes(val)) {
         truthy(error)
         return true
     } 
@@ -59,7 +59,7 @@ const truthy = error => {
 
 const falsy = parent => {
     const errorMsg = document.createElement('p')
-    functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case')
+    functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case only once')
     functions.classList(errorMsg, 'add', 'error', 'error-msg')
     if (parent.children.length === 2) parent.append(errorMsg)
     functions.classList(guess, 'add', 'error-border', 'error-icon')
