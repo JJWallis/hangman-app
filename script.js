@@ -60,6 +60,7 @@ const truthy = error => {
 const falsy = parent => {
     const errorMsg = document.createElement('p')
     functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case only once')
+    functions.element(title, 'innerText', 'Nice try...')
     functions.classList(errorMsg, 'add', 'error', 'error-msg')
     if (parent.children.length === 2) parent.append(errorMsg)
     functions.classList(guess, 'add', 'error-border', 'error-icon')
