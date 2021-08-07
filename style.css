@@ -18,6 +18,23 @@ body {
   font: 1em/1.5 "Zen Loop", cursive;
 }
 
+.start-btn {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  width: 20%;
+  height: 20%;
+  transition: 300ms;
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding: 1.5rem 1.5rem;
+}
+
+.start-btn:hover {
+  transform: scale(1.2);
+  text-decoration: underline;
+}
+
 .title {
   font-size: 4rem;
   margin-bottom: 0;
@@ -29,12 +46,15 @@ body {
   margin-top: 0;
 }
 
+.container {
+  max-width: 900px;
+  width: 80%;
+}
+
 .wrapper {
   display: flex;
   position: relative;
   align-items: center;
-  width: 90%;
-  max-width: 900px;
   min-height: 500px;
   padding: 1rem;
   border: 2px solid white;
@@ -111,6 +131,12 @@ button:hover {
 
 .error-icon {
   background: url("/images/exclamation-solid.svg") no-repeat 90% center / 4%;
+}
+
+#timer {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* =================

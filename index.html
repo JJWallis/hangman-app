@@ -13,41 +13,44 @@
     <title>Hangman</title>
 </head>
 <body>
-    <h1 id="main-title" class="title">Welcome to Hangman!</h1>
-    <h2 class="sub-title">Guess the word before the timer runs out! You have 30 seconds...</h2>
-    <div id="container" class="wrapper">
-        <div class="hangman-container wrapper-child">
-            <pre id="hangman-img" class="hangman">
-                  +—+
-                  | |
-              
-                    |
-              
-                    |
-              
-                    |
-              
-                    |
-              
-              =========
-            </pre>
-        </div>
-        <div id="txt-container" class="words-container wrapper-child">
-            <h2 class="guide">Guess the 4 letter random word below - one letter at a time</h2>
-            <h3 id="tries-remaining-txt">Number of tries remaining:</h3>
-            <div><p id="tries-remaining">6</p></div>
-            <div class="interaction-container">
-                <input id="usrs-input" type="text" placeholder="Enter guess here..." class="input">
-                <button type="button" id="button-check">Check</button>
+    <button id="btn-start" class="start-btn" type="button">Start game</button>
+    <div id="game-container" class="container hidden">
+        <h1 id="main-title" class="title">Welcome to Hangman!</h1>
+        <h2 class="sub-title">Guess the word before the timer runs out! You have 30 seconds...</h2>
+        <div id="container" class="wrapper">
+            <div class="hangman-container wrapper-child">
+                <pre id="hangman-img" class="hangman">
+                    +—+
+                    | |
+                
+                        |
+                
+                        |
+                
+                        |
+                
+                        |
+                
+                =========
+                </pre>
             </div>
-            <p id="word-to-guess">
-                <span id="letter0">_</span>
-                <span id="letter1">_</span>
-                <span id="letter2">_</span>
-                <span id="letter3">_</span>
-            </p>
+            <div id="txt-container" class="words-container wrapper-child">
+                <h2 class="guide">Guess the 4 letter random word below - one letter at a time</h2>
+                <h3 id="tries-remaining-txt">Number of tries remaining:</h3>
+                <div><p id="tries-remaining">6</p></div>
+                <div class="interaction-container">
+                    <input id="usrs-input" type="text" placeholder="Enter guess here..." class="input">
+                    <button type="button" id="button-check">Check</button>
+                </div>
+                <p id="word-to-guess">
+                    <span id="letter0">_</span>
+                    <span id="letter1">_</span>
+                    <span id="letter2">_</span>
+                    <span id="letter3">_</span>
+                </p>
+            </div>
         </div>
-    </div>
-    <p id="timer">0</p>
+        <p id="timer">0</p>
+</div>
 </body>
 </html>

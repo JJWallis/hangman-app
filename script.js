@@ -1,5 +1,6 @@
 import hangmanImages from './data.js'
 const words = ['able','acid','aged','also','area','army','away','baby','band','bank']
+const gameContainer = document.querySelector('.container')
 const wrapper = document.querySelector('#container')
 const title = document.querySelector('#main-title')
 const subTitle = document.querySelector('.sub-title')
@@ -11,6 +12,7 @@ let correctGuesses = []
 let hangmanCounter = 0 
 let guessesLeft = 6
 let timer = 0
+let finish = ''
 let isPlaying = true
 
 const functions = {
@@ -41,12 +43,17 @@ const timerCount = () => {
     }
 }
 
-// let finish = functions.timerBegin() 
-
 // ======================= VALIDATE ========================
 
-wrapper.addEventListener('click', e => {
+document.querySelector('body').addEventListener('click', e => {
     const target = e.target
+
+    if (target.matches('#btn-start')) {
+        functions.classList(target, 'add', 'hidden')
+        functions.classList(gameContainer, 'remove', 'hidden')
+        finish = functions.timerBegin() 
+    }
+
     if (target.matches('#button-check')) {
         const input = guess.value
         const valid = isValid(input) 
