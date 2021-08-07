@@ -18,6 +18,7 @@ const functions = {
 function chooseWord() {
     const random = () => Math.floor(Math.random() * 9) + 1
     const word = words[random()]
+    functions.element(guess, 'value', '')
     return word.split('')
 }
 
@@ -42,11 +43,13 @@ function isValid(val) {
     const error = document.querySelectorAll('.error')
     const parent = document.querySelector('.interaction-container')
     const regex = /[a-z]/g
-    if (regex.test(val) && val.length === 1 && !correctGuesses.includes(val)) {
-        truthy(error)
-        return true
-    } 
-    falsy(parent)
+    if (isPlaying) {
+        if (regex.test(val) && val.length === 1 && !correctGuesses.includes(val)) {
+            truthy(error)
+            return true
+        } 
+        falsy(parent)
+    }
 }
 
 const truthy = error => {
@@ -110,7 +113,8 @@ function fillWord(guess, index) {
 function endGame(win) {
     const btn = document.createElement('button')
     wrapper.append(btnReset(btn))
-    functions.element(title, 'innerText', win ? 'Congratulations, you won the game!' : 'Looser! Click reset to play again!')
+    functions.element(title, 'innerHTML', win ? 'Congratulations, you won the game!' : 
+    `Looser! Click reset to play again! <br> The correct word was '${word.join('')}'!`)
 }
 
 const btnReset = btn => {
