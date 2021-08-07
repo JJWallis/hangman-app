@@ -2,17 +2,22 @@ import hangmanImages from './data.js'
 const words = ['able','acid','aged','also','area','army','away','baby','band','bank']
 const wrapper = document.querySelector('#container')
 const title = document.querySelector('#main-title')
+const subTitle = document.querySelector('.sub-title')
 const hangman = document.querySelector('#hangman-img')
 let triesRemaining = document.querySelector('#tries-remaining')
 let guess = document.querySelector('#usrs-input')
+let timerTxt = document.querySelector('#timer')
 let correctGuesses = []
 let hangmanCounter = 0 
 let guessesLeft = 6
+let timer = 0
 let isPlaying = true
 
 const functions = {
     element: (el, prop, val) => el[prop] = val,
-    classList: (el, prop, val, val1) => el.classList[prop](val, val1)
+    classList: (el, prop, val, val1) => el.classList[prop](val, val1),
+    timerBegin: () => setInterval(timerCount , 1000),
+    timerEnd: () => clearInterval(finish)
 }
 
 function chooseWord() {
@@ -24,6 +29,19 @@ function chooseWord() {
 
 const word = chooseWord()
 console.log(word)
+
+// ========================= TIMER ========================
+
+const timerCount = () => {
+    timer ++ 
+    functions.element(timerTxt, 'innerText', timer)
+    if (timer === 30) {
+        functions.timerEnd()
+        endGame()
+    }
+}
+
+// let finish = functions.timerBegin() 
 
 // ======================= VALIDATE ========================
 
@@ -115,6 +133,8 @@ function endGame(win) {
     wrapper.append(btnReset(btn))
     functions.element(title, 'innerHTML', win ? 'Congratulations, you won the game!' : 
     `Looser! Click reset to play again! <br> The correct word was '${word.join('')}'!`)
+    functions.classList(subTitle, 'toggle', 'hidden')
+    functions.timerEnd()
 }
 
 const btnReset = btn => {
@@ -136,6 +156,10 @@ function reset() {
     functions.element(triesRemaining, 'innerText', guessesLeft)
     letters.forEach( el => functions.element(el, 'innerText', '_') )
     functions.element(title, 'innerText', 'Welcome to Hangman!')
+    functions.classList(subTitle, 'toggle', 'hidden')
+    timer = 0
+    functions.element(timerTxt, 'innerText', timer)
+    finish = functions.timerBegin()
     chooseWord()
     console.log(word)
 }

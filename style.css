@@ -19,10 +19,14 @@ body {
 }
 
 .title {
-  margin: 0 0 2rem;
   font-size: 4rem;
+  margin-bottom: 0;
   font-weight: bold;
   text-align: center;
+}
+
+.sub-title {
+  margin-top: 0;
 }
 
 .wrapper {
@@ -35,7 +39,6 @@ body {
   padding: 1rem;
   border: 2px solid white;
   border-radius: 15px;
-  box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
 }
 
 .wrapper-child {
