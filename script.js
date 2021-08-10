@@ -8,11 +8,11 @@ const hangman = document.querySelector('#hangman-img')
 let triesRemaining = document.querySelector('#tries-remaining')
 let guess = document.querySelector('#usrs-input')
 let timerTxt = document.querySelector('#timer')
-let correctGuesses = []
+let correctGuesses = [] // stored on word class - must identify current player (stored on Player class instance?)
 let hangmanCounter = 0 
 let guessesLeft = 6
 let timer = 0
-let finish = ''
+let finish = null
 let isPlaying = true
 
 const functions = {
