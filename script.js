@@ -16,7 +16,9 @@ let finish = null
 let isPlaying = true
 
 const functions = {
-    element: (el, prop, val) => el[prop] = val,
+    element(el, prop, val) { 
+        el[prop] = val 
+    },
     classList: (el, prop, val, val1) => el.classList[prop](val, val1),
     timerBegin: () => setInterval(timerCount , 1000),
     timerEnd: () => clearInterval(finish)
