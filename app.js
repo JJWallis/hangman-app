@@ -1,14 +1,13 @@
 import hangmanImages from './data.js'
 const words = ['able','acid','aged','also','area','army','away','baby','band','bank']
 const gameContainer = document.querySelector('.container')
-const wrapper = document.querySelector('#container')
 const title = document.querySelector('#main-title')
 const subTitle = document.querySelector('.sub-title')
 const hangman = document.querySelector('#hangman-img')
 let triesRemaining = document.querySelector('#tries-remaining')
 let guess = document.querySelector('#usrs-input')
 let timerTxt = document.querySelector('#timer')
-let correctGuesses = [] // stored on word class - must identify current player (stored on Player class instance?)
+let correctGuesses = [] 
 let hangmanCounter = 0 
 let guessesLeft = 6
 let timer = 0
@@ -54,12 +53,12 @@ document.querySelector('body').addEventListener('click', e => {
         functions.classList(target, 'add', 'hidden')
         functions.classList(gameContainer, 'remove', 'hidden')
         finish = functions.timerBegin() 
+        // isPlaying = true (for classes) 
     }
 
     if (target.matches('#button-check')) {
-        const input = guess.value
-        const valid = isValid(input) 
-        if (valid) playGame(input) 
+        const input = guess.value 
+        if (isValid(input)) playGame(input) 
         guess.value = ''
     } 
     
@@ -92,7 +91,7 @@ const falsy = parent => {
     functions.element(errorMsg, 'innerText', 'Please enter a valid single letter in lower case only once')
     functions.element(title, 'innerText', 'Nice try...')
     functions.classList(errorMsg, 'add', 'error', 'error-msg')
-    if (parent.children.length === 2) parent.append(errorMsg)
+    parent.children.length === 2 && parent.append(errorMsg)
     functions.classList(guess, 'add', 'error-border', 'error-icon')
     guess.placeholder = 'Try again...'
 }
@@ -139,7 +138,7 @@ function fillWord(guess, index) {
 
 function endGame(win) {
     const btn = document.createElement('button')
-    wrapper.append(btnReset(btn))
+    gameContainer.append(btnReset(btn))
     functions.element(title, 'innerHTML', win ? 'Congratulations, you won the game!' : 
     `Looser! Click reset to play again! <br> The correct word was '${word.join('')}'!`)
     functions.classList(subTitle, 'toggle', 'hidden')
