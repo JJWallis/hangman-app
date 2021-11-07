@@ -1,6 +1,5 @@
 const hangmanImages = {
-    num0: 
-    `
+   num0: `
          +—+
         |   |
 
@@ -13,8 +12,7 @@ const hangmanImages = {
             |
 
     ========= `,
-        num1:
-    `
+   num1: `
       +—+
     |   |
 
@@ -26,23 +24,7 @@ const hangmanImages = {
 
         |
     ========= `,
-        num2: 
-    `
-     +—+
-
-    |   |
-
-    O   |
-
-    |   |
-
-        |
-
-        |
-
-    =========`, 
-        num3:
-    `
+   num2: `
      +—+
 
     |   |
@@ -56,8 +38,21 @@ const hangmanImages = {
         |
 
     =========`,
-            num4:
-    `
+   num3: `
+     +—+
+
+    |   |
+
+    O   |
+
+    |   |
+
+        |
+
+        |
+
+    =========`,
+   num4: `
      +—+
 
     |   |
@@ -70,9 +65,8 @@ const hangmanImages = {
 
         |
 
-    =========`, 
-        num5:
-    `
+    =========`,
+   num5: `
      +—+
 
     |   |
@@ -86,8 +80,7 @@ const hangmanImages = {
         |
 
     =========`,
-        num6: 
-    `   
+   num6: `   
       +—+
         
      |   |
@@ -100,7 +93,7 @@ const hangmanImages = {
 
          |
 
-    =========`
+    =========`,
 }
 
 export default hangmanImages

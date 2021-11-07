@@ -1,143 +1,144 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 :root {
-  background-color: #2e3440;
-  color: white;
+   background-color: #2e3440;
+   color: white;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  font: 1em/1.5 "Zen Loop", cursive;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   font: 1em/1.5 'Zen Loop', cursive;
 }
 
 .start-btn {
-  position: absolute;
-  top: 40%;
-  left: 42%;
-  width: 20%;
-  height: 20%;
-  transition: 300ms;
-  font-size: 3rem;
-  text-transform: uppercase;
-  padding: 1.5rem 1.5rem;
-  font-weight: bold;
+   position: absolute;
+   top: 40%;
+   left: 42%;
+   width: 20%;
+   height: 20%;
+   transition: 300ms;
+   font-size: 3rem;
+   text-transform: uppercase;
+   padding: 1.5rem 1.5rem;
+   font-weight: bold;
 }
 
 .start-btn:hover {
-  transform: scale(1.2);
-  cursor: pointer;
+   transform: scale(1.2);
+   cursor: pointer;
 }
 
 .title {
-  font-size: 4rem;
-  margin-bottom: 0;
-  font-weight: bold;
-  text-align: center;
+   font-size: 4rem;
+   margin-bottom: 0;
+   font-weight: bold;
+   text-align: center;
 }
 
 .sub-title {
-  margin-top: 0;
+   margin-top: 0;
+   text-align: center;
 }
 
 .container {
-  max-width: 900px;
-  width: 80%;
+   max-width: 900px;
+   width: 80%;
 }
 
 .wrapper {
-  display: flex;
-  position: relative;
-  align-items: center;
-  min-height: 500px;
-  padding: 1rem;
-  border: 2px solid white;
-  border-radius: 15px;
+   display: flex;
+   position: relative;
+   align-items: center;
+   min-height: 500px;
+   padding: 1rem;
+   border: 2px solid white;
+   border-radius: 15px;
 }
 
 .wrapper-child {
-  flex: 1 50%;
+   flex: 1 50%;
 }
 
 .words-container {
-  text-align: center;
-  border-left: 1px solid;
-  padding-left: 3rem;
+   text-align: center;
+   border-left: 1px solid;
+   padding-left: 3rem;
 }
 
 h2 {
-  font-size: 2rem;
+   font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.8rem;
-  margin: 0;
+   font-size: 1.8rem;
+   margin: 0;
 }
 
 #tries-remaining {
-  display: inline-block;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  border-bottom: 1px solid;
+   display: inline-block;
+   font-size: 1.5rem;
+   font-weight: bolder;
+   border-bottom: 1px solid;
 }
 
 .input {
-  border: 2px solid;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  outline: none;
-  font-size: 1.5rem;
-  background: white url("/images/angle-right-solid.svg") no-repeat 90% center /
-    6%;
+   border: 2px solid;
+   border-radius: 10px;
+   margin-bottom: 1rem;
+   padding: 0.5rem;
+   outline: none;
+   font-size: 1.5rem;
+   background: white url('/images/angle-right-solid.svg') no-repeat 90% center /
+      6%;
 }
 
 .input:hover {
-  outline: none;
+   outline: none;
 }
 
 .input::placeholder {
-  color: black;
-  font-weight: bold;
-  font-size: 1.3rem;
+   color: black;
+   font-weight: bold;
+   font-size: 1.3rem;
 }
 
 button {
-  border: 2px solid;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+   border: 2px solid;
+   border-radius: 10px;
+   padding: 0.5rem 1rem;
+   font-size: 1.5rem;
 }
 
 button:hover {
-  font-weight: bold;
+   font-weight: bold;
 }
 
 .input:focus {
-  border: 3px solid mediumaquamarine;
-  font-weight: bold;
+   border: 3px solid mediumaquamarine;
+   font-weight: bold;
 }
 
 #word-to-guess {
-  font-size: 2rem;
-  letter-spacing: 0.7ch;
+   font-size: 2rem;
+   letter-spacing: 0.7ch;
 }
 
 .error-icon {
-  background: url("/images/exclamation-solid.svg") no-repeat 90% center / 4%;
+   background: url('/images/exclamation-solid.svg') no-repeat 90% center / 4%;
 }
 
 #timer {
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
+   font-size: 2rem;
+   display: flex;
+   justify-content: center;
 }
 
 /* =================
@@ -145,31 +146,31 @@ button:hover {
 ================== */
 
 .hidden {
-  display: none;
+   display: none;
 }
 
 .reset {
-  position: absolute;
-  top: 40%;
-  left: 42%;
-  font-size: 4rem;
-  text-transform: uppercase;
+   position: absolute;
+   top: 40%;
+   left: 42%;
+   font-size: 4rem;
+   text-transform: uppercase;
 }
 
 .error {
-  color: lightcoral;
+   color: lightcoral;
 }
 
 .error-msg {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0.5rem 0 0 0;
+   font-size: 1.5rem;
+   font-weight: bold;
+   margin: 0.5rem 0 0 0;
 }
 
 .error-border {
-  border: 3px solid lightcoral;
+   border: 3px solid lightcoral;
 }
 
 .error-border::placeholder {
-  color: lightcoral;
+   color: lightcoral;
 }
