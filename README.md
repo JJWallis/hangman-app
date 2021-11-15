@@ -114,3 +114,5 @@ Words collection - next time fetch data from API vs hardcode (or even Github CoP
 Stored correct guesses in arr - needed to add logic to which only adds letter to it if not already present (after 1st adding it however many times it appears in the word) | usr was able to cheat before
 
 'is' naming convention for funcs returning a boolean (use next time)
+
+Testing, testing, testing
