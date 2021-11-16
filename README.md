@@ -116,3 +116,5 @@ Stored correct guesses in arr - needed to add logic to which only adds letter to
 'is' naming convention for funcs returning a boolean (use next time)
 
 Testing, testing, testing
+
+Testing, testing, testing
