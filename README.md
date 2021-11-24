@@ -43,6 +43,7 @@ Your users should be able to:
 -  Semantic HTML5 markup
 -  Flexbox
 -  Vanilla JS
+-  ES6 modules
 
 ### What I learned
 
@@ -77,15 +78,15 @@ const regex = /[a-z]/g
 
 ### Continued development
 
-Not to use 'id' selectors in CSS (too specific)
+I kept track of the game's 'state' through multiple number variables in the global scope, which in the future I will try to refactor by potentially using an object to contain all of them, or reverse their individual logic for multiple purposes (if one increaes then another should decrease).
 
-Used multiple counters - not necessary as could base our logic off less amount (+ reverse logic to use in multiple places)
+I also used ES6 modules to import the string based hangman images into my primary app, yet not for the rest of the project. For future projects I would like to explore refactoring my code further by modelling the whole app with modules, even though at the current time I find it easier to organise myself within one file.
 
 Modules accross whole project
 
 ### Useful resources
 
--  [Pig Game Project](https://www.udemy.com/course/the-complete-javascript-course/) - Completing this game first really helped me with a lot of the base logic for games in general, such as only running the game if it is still being played (via boolean logic).
+-  [Pig Game Project](https://www.udemy.com/course/the-complete-javascript-course/) - Completing this game in advance really helped me with a lot of the base logic for games in general, such as only executing the game via boolean logic which determines if it is currently being played (the user has pressed the 'start' button).
 
 ## Author
 
