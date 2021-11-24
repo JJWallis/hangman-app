@@ -83,20 +83,14 @@ This project was my first time using the `<pre>` tag in action which, although i
 }
 ```
 
-Validation error showcasing - error icon + red border around input
+To add to the visual representation of invalidly inputted data, I decided to practice dynamically toggling different background icons from an error class which was applied to the input. For future project I feel using a fixed px value for the positioning could help with controlling the icon's position if other content around it were to responsively adjust.
 
 ```js
-import hangmanImages from './data.js'
-```
-
-1st use of modules - import hangman str designs
-
-```js
-timerBegin: () => setInterval(timerCount, 1000),
+   timerBegin: () => setInterval(timerCount, 1000),
    timerEnd: () => clearInterval(finish),
 ```
 
-Timer - useInterval() + callbacks (1st use in project) vs setTimeout() - not as useful | browser issues with setInterval() being off - should use date obj + calculate time from last execution (to more gain realistic second to display to user - carried out in a later Stopwath project via TreeHouse)
+In order to build the restricted timer logic, I had to first setup the timer using the built in asynchronous function `setInterval()` and further learn how to cancel it appropiately based on specific events occuring. This callback function will probably end up being more useful than setTimeout() in future projects, but I will need to research how to account for 'browser teething' issues, which causes the function to run at a increasingly delayed time compared to the amount you manually set.
 
 ```js
 const random = () => Math.floor(Math.random() * 9) + 1
@@ -105,7 +99,7 @@ functions.element(guess, 'value', '')
 return word.split('')
 ```
 
-returned word to guess - good use of array logic & methods
+This small block of code performed an important amount of logic in a relatively refactored manner considering my current development stage in learning JavaScript. I was proud of my ability to run the `random()` function inside the array selection syntax, as well as making use of the `split()` method to return that word in the desired format. I do believe next time I could practice chaining methods directly onto the word selection, and implicitly returning that value all within one line of code.
 
 ```js
 if (isPlaying) {
@@ -118,7 +112,7 @@ if (isPlaying) {
 }
 ```
 
-Stored correct guesses in arr - needed to add logic to which only adds letter to it if not already present (after 1st adding it however many times it appears in the word) | usr was able to cheat before | 'is' naming convention for funcs returning a boolean (use next time)
+Once again, I was really proud of the above code because it utilises a lot of efficient logic and techniques which I had only recently learnt in my JavaScript journey. The `isPlaying` variable uses the traditional 'is' naming convention when some form of funcion or logic is returning a value/producing an outcome based on some form of boolean logic.
 
 Although I had already used regular expressions by this project, I was still proud of my ability to create one on the fly without needing to research how. They can certainly be a very powerful and organised technique to reach for when validating users input.
 
