@@ -43,7 +43,7 @@ Your users should be able to:
 -  Semantic HTML5 markup
 -  Flexbox
 -  Vanilla JS
--  ES6 modules
+-  ES6 Modules
 
 ### What I learned
 
@@ -96,15 +96,19 @@ const random = () => Math.floor(Math.random() * 9) + 1
 const word = words[random()]
 functions.element(guess, 'value', '')
 return word.split('')
+```
 
 // returned word to guess - good use of array logic & methods
 
+```js
 const regex = /[a-z]/g
 ```
 
 Although I had already used regular expressions by this project, I was still proud of my ability to create one on the fly without needing to research how. They can certainly be a very powerful and organised technique to reach for when validating users input.
 
 ### Continued development
+
+In regards to storing the words which were used in the game, I chose to hardcode them into an array manually to test if my random number selection logic worked. However, in the future I realise you would pull this kind of data from an external API, which could therefore be much more dynamic in creating different topics and word lengths.
 
 I kept track of the game's 'state' through multiple number variables in the global scope, which in the future I will try to refactor by potentially using an object to contain all of them, or reverse their individual logic for multiple purposes (if one increaes then another should decrease).
 
@@ -114,7 +118,7 @@ I also used ES6 modules to import the string based hangman images into my primar
 
 -  [Pig Game Project](https://www.udemy.com/course/the-complete-javascript-course/) - Completing this game in advance really helped me with a lot of the base logic for games in general, such as only executing the game via boolean logic which determines if it is currently being played (the user has pressed the 'start' button).
 
--  [JavaScript - ES6 Modules](https://www.youtube.com/watch?v=cRHQNNcYf6s&t=283s&ab_channel=WebDevSimplified)
+-  [JavaScript - ES6 Modules](https://www.youtube.com/watch?v=cRHQNNcYf6s&t=283s&ab_channel=WebDevSimplified) - Kyle's quick crash course like tutorial helped me quickly get up to speed with Modules in JavaScript, focusing on the theory behind how they work and the difference between default & named imports.
 
 ## Author
 
@@ -123,9 +127,7 @@ I also used ES6 modules to import the string based hangman images into my primar
 
 JS:
 
-Timer - useInterval() + callbacks practice (1st use in project) vs setTimeout() - not as useful | browser issues with setInterval() being off - should use date obj + calculate time from last execution (to more gain realistic second to display to usr)
-
-Words collection - next time fetch data from API vs hardcode (or even Github CoPilot AI) + greater range |
+Timer - useInterval() + callbacks (1st use in project) vs setTimeout() - not as useful | browser issues with setInterval() being off - should use date obj + calculate time from last execution (to more gain realistic second to display to user - carried out in a later Stopwath project via TreeHouse)
 
 Stored correct guesses in arr - needed to add logic to which only adds letter to it if not already present (after 1st adding it however many times it appears in the word) | usr was able to cheat before
 
