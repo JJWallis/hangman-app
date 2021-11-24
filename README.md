@@ -56,7 +56,7 @@ Your users should be able to:
 </p>
 ```
 
-Dynamic letter guessing - link with id of span (shows letter at that position)
+I first attempted to reveal the correctly guessed letter within one single `<p>`, before then realising I needed to individually match each letter position with that corresponding letter's index value in the 'selected word' array. I was proud of my ability to semantically produce this solution inside a `<p>` wrapper, using `<span>` tags which wouldn'd add any more uncessary semantic meaning to the words' markup.
 
 ```html
 <pre id="hangman-img" class="hangman">
@@ -75,7 +75,7 @@ Dynamic letter guessing - link with id of span (shows letter at that position)
 </pre>
 ```
 
-used pre tag to render - some bugs with controlling positioning of it - img better next time
+This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string data you pass to it, also presents a major issue in controlling the alignment of the data because it's all controlled via manually created spaces. In the future it would be better to use images of each hangman position, which could then be controlled much nicer within the CSS (probably via a background image with the same position and size to achieve uniformity).
 
 ```css
 .error-icon {
