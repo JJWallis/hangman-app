@@ -1,6 +1,6 @@
 # Hangman Game
 
-This was a personal project & challenge of mine - to build a fully functioning Hangman game!
+This project was a personal challenge of mine - to build a fully functioning Hangman game
 
 ## Table of contents
 
@@ -21,12 +21,12 @@ This was a personal project & challenge of mine - to build a fully functioning H
 
 Your users should be able to:
 
--  Press the 'Start Game' button to begin playing
--  Input their letter of choice & recieve correct validation if input is invalid (empty or not a string)
--  Press the 'check' button to submit their letter of choice and recieve confirmation of whether they guessed correctly
--  The timer should terminate after 30 seconds and prompt the user to re-start the game if that time limit is reached
--  Each incorrect guess the user inputs, an additional version of the hangman should be generated & displayed on the page (as well decreasing the number of guesses remaining)
--  Each correctly guessed letter should be displayed at its corresponding position in the word
+-  Interact with the 'Start Game' button to begin playing the game
+-  Enter their letter of choice & recieve correct validation if invalid
+-  Submit their letter of choice and receive confirmation of whether they guessed correctly
+-  The timer should terminate after 30 seconds and prompt the user to re-start the game
+-  For each incorrect guess, an additional version of the hangman image should be displayed, as well decreasing the number of guesses remaining
+-  Each correctly guessed letter should be displayed to the user at its corresponding position in the word
 
 ### Screenshot
 
@@ -42,7 +42,6 @@ Your users should be able to:
 
 -  Semantic HTML5 markup
 -  Flexbox
--  Mobile-first workflow
 -  Vanilla JS
 
 ### What I learned
@@ -114,7 +113,3 @@ Words collection - next time fetch data from API vs hardcode (or even Github CoP
 Stored correct guesses in arr - needed to add logic to which only adds letter to it if not already present (after 1st adding it however many times it appears in the word) | usr was able to cheat before
 
 'is' naming convention for funcs returning a boolean (use next time)
-
-Testing, testing, testing
-
-Testing, testing, testing
