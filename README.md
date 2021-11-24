@@ -92,17 +92,33 @@ import hangmanImages from './data.js'
 1st use of modules - import hangman str designs
 
 ```js
+timerBegin: () => setInterval(timerCount, 1000),
+   timerEnd: () => clearInterval(finish),
+```
+
+Timer - useInterval() + callbacks (1st use in project) vs setTimeout() - not as useful | browser issues with setInterval() being off - should use date obj + calculate time from last execution (to more gain realistic second to display to user - carried out in a later Stopwath project via TreeHouse)
+
+```js
 const random = () => Math.floor(Math.random() * 9) + 1
 const word = words[random()]
 functions.element(guess, 'value', '')
 return word.split('')
 ```
 
-// returned word to guess - good use of array logic & methods
+returned word to guess - good use of array logic & methods
 
 ```js
-const regex = /[a-z]/g
+if (isPlaying) {
+   const regex = /[a-z]/g
+   if (
+      regex.test(val) &&
+      val.length === 1 &&
+      !correctGuesses.includes(val)
+         ) {...}
+}
 ```
+
+Stored correct guesses in arr - needed to add logic to which only adds letter to it if not already present (after 1st adding it however many times it appears in the word) | usr was able to cheat before | 'is' naming convention for funcs returning a boolean (use next time)
 
 Although I had already used regular expressions by this project, I was still proud of my ability to create one on the fly without needing to research how. They can certainly be a very powerful and organised technique to reach for when validating users input.
 
@@ -124,11 +140,3 @@ I also used ES6 modules to import the string based hangman images into my primar
 
 -  Website - [Joshua Jameson-Wallis](https://joshuajamesonwallis.com)
 -  Linkedin - [Joshua Jameson-Wallis]()
-
-JS:
-
-Timer - useInterval() + callbacks (1st use in project) vs setTimeout() - not as useful | browser issues with setInterval() being off - should use date obj + calculate time from last execution (to more gain realistic second to display to user - carried out in a later Stopwath project via TreeHouse)
-
-Stored correct guesses in arr - needed to add logic to which only adds letter to it if not already present (after 1st adding it however many times it appears in the word) | usr was able to cheat before
-
-'is' naming convention for funcs returning a boolean (use next time)
