@@ -56,7 +56,7 @@ Your users should be able to:
 </p>
 ```
 
-I first attempted to reveal the correctly guessed letter within one single `<p>`, before then realising I needed to individually match each letter position with that corresponding letter's index value in the 'selected word' array. I was proud of my ability to semantically produce this solution inside a `<p>` wrapper, using `<span>` tags which wouldn'd add any more uncessary semantic meaning to the words' markup.
+I first attempted to reveal the correctly guessed letter within one single `<p>`, before then realising I needed to individually match each letter position with that corresponding letter's index value in the 'selected word' array. I was proud of my ability to semantically produce this solution inside a `<p>` wrapper, using `<span>` tags which wouldn't add any more unnecessary semantic meaning to the words' markup.
 
 ```html
 <pre id="hangman-img" class="hangman">
@@ -75,7 +75,7 @@ I first attempted to reveal the correctly guessed letter within one single `<p>`
 </pre>
 ```
 
-This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string data you pass to it, also presents a major issue in controlling the alignment of the data because it's all controlled via manually created spaces. In the future it would be better to use images of each hangman position, which could then be controlled much nicer within the CSS (probably via a background image with the same position and size to achieve uniformity).
+This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string data you pass to it, also presents a major issue in controlling the alignment of the data because it's all controlled via manually created spaces. In the future it would be better to use images of each hangman position, which could then be controlled much nicer within the CSS as a background image with the same position and size to achieve uniformity.
 
 ```css
 .error-icon {
@@ -90,7 +90,7 @@ To add to the visual representation of invalidly inputted data, I decided to pra
    timerEnd: () => clearInterval(finish),
 ```
 
-In order to build the restricted timer logic, I had to first setup the timer using the built in asynchronous function `setInterval()` and further learn how to cancel it appropiately based on specific events occuring. This callback function will probably end up being more useful than setTimeout() in future projects, but I will need to research how to account for 'browser teething' issues, which causes the function to run at a increasingly delayed time compared to the amount you manually set.
+In order to build the restricted timer logic, I had to first setup the timer using the built in asynchronous function `setInterval()`, and further learn how to cancel it appropiately based on specific events occuring. This callback function will probably end up being more useful than setTimeout() in future projects, but I will need to research how to account for 'browser teething' issues, which causes the function to run at a increasingly delayed time compared to the amount you manually set.
 
 ```js
 const random = () => Math.floor(Math.random() * 9) + 1
@@ -112,15 +112,15 @@ if (isPlaying) {
 }
 ```
 
-Once again, I was really proud of the above code because it utilises a lot of efficient logic and techniques which I had only recently learnt in my JavaScript journey. The `isPlaying` variable uses the traditional 'is' naming convention when some form of funcion or logic is returning a value/producing an outcome based on some form of boolean logic.
+Once again, I was really proud of the above code because it utilises a lot of efficient logic and techniques which I had only recently learnt in my JavaScript journey. The `isPlaying` variable uses the traditional 'is' naming convention when some form of funcion or logic is returning a value or producing an outcome based on some form of boolean logic.
 
-Although I had already used regular expressions by this project, I was still proud of my ability to create one on the fly without needing to research how. They can certainly be a very powerful and organised technique to reach for when validating users input.
+Although I had already used regular expressions before this project, I was still proud of my ability to create one on the fly for this purpose without needing to research how. They can certainly be a very powerful feature of the language to reach for when validating user's input.
 
 ### Continued development
 
 In regards to storing the words which were used in the game, I chose to hardcode them into an array manually to test if my random number selection logic worked. However, in the future I realise you would pull this kind of data from an external API, which could therefore be much more dynamic in creating different topics and word lengths.
 
-I kept track of the game's 'state' through multiple number variables in the global scope, which in the future I will try to refactor by potentially using an object to contain all of them, or reverse their individual logic for multiple purposes (if one increaes then another should decrease).
+I kept track of the game's 'state' through multiple number variables in the global scope, which in the future I will try to refactor by potentially using an object to contain all of them, or reverse their individual logic for multiple purposes (if one increaes then the other should decrease).
 
 I also used ES6 modules to import the string based hangman images into my primary app, yet not for the rest of the project. For future projects I would like to explore refactoring my code further by modelling the whole app with modules, even though at the current time I find it easier to organise myself within one file.
 
