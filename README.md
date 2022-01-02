@@ -99,7 +99,7 @@ functions.element(guess, 'value', '')
 return word.split('')
 ```
 
-This small block of code performed an important amount of logic in a relatively refactored manner considering my current development stage in learning JavaScript. I was proud of my ability to run the `random()` function inside the array selection syntax, as well as making use of the `split()` method to return that word in the desired format. I do believe next time I could practice chaining methods directly onto the word selection, and implicitly returning that value all within one line of code.
+This small block of code performed an important amount of logic in a relatively refactored manner, considering the level I am currently at in learning JavaScript. I was proud of my ability to run the `random()` function inside the array selection syntax, as well as making use of the `split()` method to return that word in the desired format.
 
 ```js
 if (isPlaying) {
@@ -112,9 +112,7 @@ if (isPlaying) {
 }
 ```
 
-Once again, I was really proud of the above code because it utilises a lot of efficient logic and techniques which I had only recently learnt in my JavaScript journey. The `isPlaying` variable uses the traditional 'is' naming convention when some form of funcion or logic is returning a value or producing an outcome based on some form of boolean logic.
-
-Although I had already used regular expressions before this project, I was still proud of my ability to create one on the fly for this purpose without needing to research how. They can certainly be a very powerful feature of the language to reach for when validating user's input.
+Once again, I was really proud of the above code because it utilises a lot of efficient logic and techniques which I had only recently learnt in my JavaScript journey. The `isPlaying` variable uses the traditional 'is' naming convention when some form of funcion or logic is returning a value based on some form of boolean logic. Although I had already used regular expressions before this project, I was glad I was able to create one on the fly for this purpose without needing to conduct any research.
 
 ### Continued development
 
