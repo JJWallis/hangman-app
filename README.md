@@ -118,17 +118,15 @@ Once again, I was really proud of the above code because it utilises a lot of ef
 
 In regards to storing the words which were used in the game, I chose to hardcode them into an array manually to test if my random number selection logic worked. However, in the future I realise you would pull this kind of data from an external API, which could therefore be much more dynamic in creating different topics and word lengths.
 
-I kept track of the game's 'state' through multiple number variables in the global scope, which in the future I will try to refactor by potentially using an object to contain all of them, or reverse their individual logic for multiple purposes (if one increaes then the other should decrease).
-
-I also used ES6 modules to import the string based hangman images into my primary app, yet not for the rest of the project. For future projects I would like to explore refactoring my code further by modelling the whole app with modules, even though at the current time I find it easier to organise myself within one file.
+I kept track of the game's 'state' through multiple number variables in the global scope, which in the future I will try to refactor by potentially using an object to store all of them, or reverse their individual logic for multiple purposes (if one increases, then the other should decrease).
 
 ### Useful resources
 
--  [Pig Game Project](https://www.udemy.com/course/the-complete-javascript-course/) - Completing this game in advance really helped me with a lot of the base logic for games in general, such as only executing the game via boolean logic which determines if it is currently being played (the user has pressed the 'start' button).
+-  [Pig Game Project](https://www.udemy.com/course/the-complete-javascript-course/) - Completing this game in advance really helped me with a lot of the base logic for games, such as only executing the game via boolean logic which determines if it is currently being played, or if the user has pressed the 'start' button.
 
 -  [JavaScript - ES6 Modules](https://www.youtube.com/watch?v=cRHQNNcYf6s&t=283s&ab_channel=WebDevSimplified) - Kyle's quick crash course like tutorial helped me quickly get up to speed with Modules in JavaScript, focusing on the theory behind how they work and the difference between default and named imports.
 
 ## Author
 
 -  Website - [Joshua Jameson-Wallis](https://joshuajamesonwallis.com)
--  Linkedin - [Joshua Jameson-Wallis]()
+-  Linkedin - [Joshua Jameson-Wallis](https://www.linkedin.com/in/joshua-jameson-wallis/)
