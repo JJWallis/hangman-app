@@ -22,9 +22,9 @@ This project was a personal challenge of mine - to build a fully functioning Han
 Your users should be able to:
 
 -  Interact with the 'Start Game' button to begin playing the game
--  Enter their letter of choice & recieve correct validation if invalid
+-  Enter their letter of choice and recieve correct validation if input is invalid
 -  Submit their letter of choice and receive confirmation of whether they guessed correctly
--  The timer should terminate after 30 seconds and prompt the user to re-start the game
+-  The timer should terminate after 30 seconds and prompt the user to restart the game
 -  For each incorrect guess, an additional version of the hangman image should be displayed, as well decreasing the number of guesses remaining
 -  Each correctly guessed letter should be displayed to the user at its corresponding position in the word
 
@@ -75,7 +75,7 @@ I first attempted to reveal the correctly guessed letter within one single `<p>`
 </pre>
 ```
 
-This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string data you pass to it, also presents a major issue in controlling the alignment of the data because it's all controlled via manually created spaces. In the future it would be better to use images of each hangman position, which could then be controlled much nicer within the CSS as a background image with the same position and size to achieve uniformity.
+This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string you pass to it, also presents a major issue in controlling the alignment of the data. In the future, it would be better to use images of each hangman position which could then be controlled much easier within the CSS so they would change along the same point to achieve a level of uniformity.
 
 ```css
 .error-icon {
@@ -83,14 +83,14 @@ This project was my first time using the `<pre>` tag in action which, although i
 }
 ```
 
-To add to the visual representation of invalidly inputted data, I decided to practice dynamically toggling different background icons from an error class which was applied to the input. For future project I feel using a fixed px value for the positioning could help with controlling the icon's position if other content around it were to responsively adjust.
+To add to the visual representation of invalidly inputted data, I decided to practice dynamically toggling different background icons from an error class which was applied to the input. For future project, I feel using a fixed px value for the positioning could help with controlling the icon's position if other content around it were to responsively adjust.
 
 ```js
    timerBegin: () => setInterval(timerCount, 1000),
    timerEnd: () => clearInterval(finish),
 ```
 
-In order to build the restricted timer logic, I had to first setup the timer using the built in asynchronous function `setInterval()`, and further learn how to cancel it appropiately based on specific events occuring. This callback function will probably end up being more useful than setTimeout() in future projects, but I will need to research how to account for 'browser teething' issues, which causes the function to run at a increasingly delayed time compared to the amount you manually set.
+In order to build the restricted timer logic, I had to first setup the timer using the built in asynchronous function `setInterval()`, whilst further learning how to cancel it appropiately based on specific events occuring. This callback function will probably end up being more useful than `setTimeout()`, but I will need to research how to account for 'browser teething' issues, that cause the function to run at an increasingly delayed time compared to the amount you manually set.
 
 ```js
 const random = () => Math.floor(Math.random() * 9) + 1
