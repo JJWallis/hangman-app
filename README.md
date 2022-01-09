@@ -99,20 +99,7 @@ functions.element(guess, 'value', '')
 return word.split('')
 ```
 
-This small block of code performed an important amount of logic in a relatively refactored manner, considering the level I am currently at in learning JavaScript. I was proud of my ability to run the `random()` function inside the array selection syntax, as well as making use of the `split()` method to return that word in the desired format.
-
-```js
-if (isPlaying) {
-   const regex = /[a-z]/g
-   if (
-      regex.test(val) &&
-      val.length === 1 &&
-      !correctGuesses.includes(val)
-         ) {...}
-}
-```
-
-Once again, I was really proud of the above code because it utilises a lot of efficient logic and techniques which I had only recently learnt in my JavaScript journey. The `isPlaying` variable uses the traditional 'is' naming convention when some form of funcion or logic is returning a value based on some form of boolean logic. Although I had already used regular expressions before this project, I was glad I was able to create one on the fly for this purpose without needing to conduct any research.
+I was proud of my ability to run the `random()` function inside the array selection syntax, as well as making use of the `split()` method to return that word in the desired format.
 
 ### Continued development
 
