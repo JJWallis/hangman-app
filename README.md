@@ -75,7 +75,7 @@ I first attempted to reveal the correctly guessed letter within one single `<p>`
 </pre>
 ```
 
-This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string you pass to it, also presents a major issue in controlling the alignment of the data. In the future, it would be better to use images of each hangman position which could then be controlled much easier within the CSS so they would change along the same point to achieve a level of uniformity.
+This project was my first time using the `<pre>` tag in action which, although is clearly powerful in displaying whatever string you present it with, also presents a major issue in controlling the alignment of the data. In the future, it would be better to use images of each hangman position which could then be controlled much easier within the CSS so they would change at the same point to achieve a level of uniformity.
 
 ```css
 .error-icon {
