@@ -83,7 +83,7 @@ This project was my first time using the `<pre>` tag in action which, although i
 }
 ```
 
-To add to the visual representation of invalidly inputted data, I decided to practice dynamically toggling different background icons from an error class which was applied to the input. For future project, I feel using a fixed px value for the positioning could help with controlling the icon's position if other content around it were to responsively adjust.
+To add to the visual representation of invalid inputted data, I decided to practice dynamically toggling different background icons from an error class which was applied to the input. For future projects, I feel using a fixed px value for the positioning could help with controlling the icon's position if other content around it were to responsively adjust.
 
 ```js
    timerBegin: () => setInterval(timerCount, 1000),
