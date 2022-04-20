@@ -4,7 +4,8 @@
    "description": "This project was a personal challenge of mine - to build a fully functioning Hangman game",
    "main": "app.js",
    "scripts": {
-      "test": "jest"
+      "test": "jest",
+      "lint": "eslint --ignore-path .gitignore"
    },
    "repository": {
       "type": "git",
