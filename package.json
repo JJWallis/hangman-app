@@ -1,0 +1,20 @@
+{
+   "name": "hangman",
+   "version": "1.0.0",
+   "description": "This project was a personal challenge of mine - to build a fully functioning Hangman game",
+   "main": "app.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/JJWallis/hangman-app.git"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/JJWallis/hangman-app/issues"
+   },
+   "homepage": "https://github.com/JJWallis/hangman-app#readme"
+}
