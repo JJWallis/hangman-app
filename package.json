@@ -18,6 +18,7 @@
    },
    "homepage": "https://github.com/JJWallis/hangman-app#readme",
    "devDependencies": {
+      "eslint": "^8.13.0",
       "jest": "^27.5.1"
    }
 }
