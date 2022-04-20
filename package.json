@@ -16,5 +16,8 @@
    "bugs": {
       "url": "https://github.com/JJWallis/hangman-app/issues"
    },
-   "homepage": "https://github.com/JJWallis/hangman-app#readme"
+   "homepage": "https://github.com/JJWallis/hangman-app#readme",
+   "devDependencies": {
+      "jest": "^27.5.1"
+   }
 }
