@@ -10,7 +10,7 @@
     "check-format": "npm run prettier -- --list-different",
     "lint": "eslint --ignore-path .gitignore",
     "lint:stage": "lint-staged",
-    "validate": "npm run check-format && npm run lint && npm run test",
+    "validate": "npm-run-all --parallel check-format lint lint-staged test",
     "prepare": "husky install"
   },
   "repository": {
