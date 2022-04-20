@@ -1,34 +1,35 @@
 {
-   "name": "hangman",
-   "version": "1.0.0",
-   "description": "This project was a personal challenge of mine - to build a fully functioning Hangman game",
-   "main": "app.js",
-   "scripts": {
-      "test": "jest",
-      "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,md}\"",
-      "format": "npm run prettier -- --write",
-      "check-format": "npm run prettier -- --list-different",
-      "lint": "eslint --ignore-path .gitignore",
-      "validate": "npm run check-format && npm run lint && npm run test",
-      "prepare": "husky install"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/JJWallis/hangman-app.git"
-   },
-   "keywords": [],
-   "author": "",
-   "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/JJWallis/hangman-app/issues"
-   },
-   "homepage": "https://github.com/JJWallis/hangman-app#readme",
-   "devDependencies": {
-      "eslint": "^8.13.0",
-      "eslint-plugin-jest": "^26.1.4",
-      "husky": "^7.0.4",
-      "jest": "^27.5.1",
-      "lint-staged": "^12.4.0",
-      "prettier": "^2.6.2"
-   }
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "This project was a personal challenge of mine - to build a fully functioning Hangman game",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,md}\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "lint": "eslint --ignore-path .gitignore",
+    "lint:test": "lint-staged",
+    "validate": "npm run check-format && npm run lint && npm run test",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJWallis/hangman-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJWallis/hangman-app/issues"
+  },
+  "homepage": "https://github.com/JJWallis/hangman-app#readme",
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.4.0",
+    "prettier": "^2.6.2"
+  }
 }

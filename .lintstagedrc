@@ -1,10 +1,9 @@
 {
    "*.+(js)": [
-        "eslint",
+      "eslint"
    ],
    "**/*.{js,json,md}": [
-       "prettier --write",
-       "git add",
-    //    added back to Git with changes 
+      "prettier --write",
+      "git add"
    ]
 }
