@@ -1,9 +1,21 @@
 {
    "parserOptions": {
       "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-         "jsx": true
-      }
+      "sourceType": "module"
+   },
+   "rules": {
+      "strict": ["error", "never"],
+      //   never since we are using es6 modules
+      "valid-typeof": "error",
+      "no-unsafe-negation": "error",
+      "no-unused-vars": "error",
+      "no-unexpected-multiline": "error",
+      "no-undef": "error"
+   },
+   "env": {
+      // environment
+      "browser": true,
+      "node": true,
+      "es6": true
    }
 }
