@@ -3,19 +3,15 @@
       "ecmaVersion": 6,
       "sourceType": "module"
    },
+   "extends": ["eslint:recommended"],
    "rules": {
-      "strict": ["error", "never"],
+      "strict": ["error", "never"]
       //   never since we are using es6 modules
-      "valid-typeof": "error",
-      "no-unsafe-negation": "error",
-      "no-unused-vars": "error",
-      "no-unexpected-multiline": "error",
-      "no-undef": "error"
    },
    "env": {
       // environment
       "browser": true,
-      "node": true,
-      "es6": true
-   }
+      "jest/globals": true
+   },
+   "plugins": ["jest"]
 }
